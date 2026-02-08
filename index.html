@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- BASIC -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- TITLE + DESCRIPTION (VERY IMPORTANT FOR SEO) -->
+  <title>Shravan Bhonkar | Student Web Developer Portfolio</title>
+  <meta name="description" content="Shravan is a student web developer who builds modern websites using HTML, CSS, and JavaScript. Explore skills and projects." />
+
+  <!-- KEYWORDS (Not very important in 2026 but safe to include) -->
+  <meta name="keywords" content="Shravan, Portfolio, Web Developer, Student, HTML, CSS, JavaScript, Projects, Shravan Bhonkar" />
+
+  <!-- AUTHOR -->
+  <meta name="author" content="Shravan" />
+
+  <!-- ROBOTS -->
+  <meta name="robots" content="index, follow" />
+
+  <!-- CANONICAL (CHANGE THIS AFTER HOSTING) -->
+  <link rel="canonical" href="https://example.com/" />
+
+  <!-- FAVICON (Optional: add favicon.png in same folder) -->
+  <link rel="icon" type="image/png" href="favicon.png" />
+
+  <!-- OPEN GRAPH (WhatsApp, Facebook) -->
+  <meta property="og:title" content="Shravan | Portfolio" />
+  <meta property="og:description" content="Student web developer portfolio. Skills, projects and work." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://example.com/" />
+  <meta property="og:image" content="https://example.com/preview.png" />
+
+  <!-- TWITTER CARD -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Shravan | Portfolio" />
+  <meta name="twitter:description" content="Student web developer portfolio. Skills and projects." />
+  <meta name="twitter:image" content="https://example.com/preview.png" />
+
+  <!-- PERFORMANCE: PRECONNECT (SAFE EVEN WITHOUT FONTS) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- STYLE -->
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --card: rgba(255, 255, 255, 0.06);
+      --text: #e8eaf0;
+      --muted: rgba(255, 255, 255, 0.7);
+      --border: rgba(255, 255, 255, 0.12);
+      --accent: #7c5cff;
+      --accent2: #22c55e;
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+      --radius: 22px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at top left, rgba(124, 92, 255, 0.25), transparent 50%),
+        radial-gradient(circle at bottom right, rgba(34, 197, 94, 0.18), transparent 55%),
+        var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* Accessibility */
+    :focus-visible {
+      outline: 3px solid rgba(124, 92, 255, 0.7);
+      outline-offset: 3px;
+      border-radius: 12px;
+    }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: auto;
+      padding: 18px 0 70px;
+    }
+
+    /* Skip Link (SEO + Accessibility) */
+    .skip-link {
+      position: absolute;
+      top: -60px;
+      left: 10px;
+      background: #111827;
+      color: white;
+      padding: 10px 14px;
+      border-radius: 12px;
+      z-index: 999;
+      transition: 0.2s;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    .skip-link:focus {
+      top: 10px;
+    }
+
+    /* NAV */
+    header.nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10, 12, 20, 0.6);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 14px 0;
+    }
+
+    .logo {
+      font-weight: 800;
+      letter-spacing: 0.4px;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      white-space: nowrap;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      border-radius: 999px;
+      box-shadow: 0 0 18px rgba(124, 92, 255, 0.55);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    nav a {
+      font-size: 14px;
+      opacity: 0.88;
+      padding: 10px 12px;
+      border-radius: 12px;
+      transition: 0.2s;
+    }
+
+    nav a:hover {
+      background: var(--card);
+      opacity: 1;
+    }
+
+    /* HERO */
+    main {
+      margin-top: 22px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    h1 {
+      font-size: clamp(28px, 3.2vw, 44px);
+      line-height: 1.15;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 15px;
+      margin-bottom: 18px;
+    }
+
+    .highlight {
+      color: var(--accent);
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .tag {
+      font-size: 13px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.03);
+      opacity: 0.95;
+      white-space: nowrap;
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
+    .btn {
+      padding: 10px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--text);
+      cursor: pointer;
+      transition: 0.2s;
+      display: inline-block;
+      font-size: 14px;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: var(--shadow);
+      border-color: rgba(124, 92, 255, 0.35);
+    }
+
+    .primary {
+      border: none;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: white;
+      font-weight: 700;
+    }
+
+    /* PROFILE */
+    .profile {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      align-items: center;
+      text-align: center;
+    }
+
+    .avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, rgba(124, 92, 255, 0.85), rgba(34, 197, 94, 0.65));
+      display: grid;
+      place-items: center;
+      font-size: 44px;
+      font-weight: 900;
+      color: white;
+      box-shadow: 0 0 40px rgba(124, 92, 255, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    .profile h2 {
+      font-size: 18px;
+      margin-top: 4px;
+    }
+
+    .profile p {
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 14px;
+    }
+
+    /* SECTIONS */
+    section {
+      margin-top: 18px;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-size: 18px;
+    }
+
+    .section-title span {
+      opacity: 0.85;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* SKILLS */
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    @media (max-width: 900px) {
+      .skills {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .skill h3 {
+      font-size: 15px;
+      margin-bottom: 8px;
+    }
+
+    .bar {
+      width: 100%;
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+
+    .fill {
+      height: 100%;
+      width: 0%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      transition: width 1.2s ease;
+    }
+
+    /* PROJECTS */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    @media (max-width: 900px) {
+      .projects {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .project h3 {
+      font-size: 16px;
+    }
+
+    .project p {
+      color: var(--muted);
+      margin-top: 10px;
+      line-height: 1.6;
+      font-size: 14px;
+    }
+
+    .meta {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+
+    /* FOOTER */
+    footer {
+      margin-top: 26px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      opacity: 0.9;
+    }
+
+    /* ANIMATIONS */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(14px);
+      transition: 0.7s ease;
+    }
+
+    .fade-up.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+
+  <!-- STRUCTURED DATA (JSON-LD) FOR GOOGLE -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Shravan Bhonkar",
+    "jobTitle": "Student Web Developer",
+    "description": "Student web developer who builds modern websites using HTML, CSS, and JavaScript.",
+    "url": "https://example.com/",
+    "sameAs": [
+      "https://github.com/",
+      "https://linkedin.com/",
+      "https://instagram.com/"
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <!-- Skip to main content -->
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- NAVBAR -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="logo" aria-label="Shravan Portfolio Home">
+        <div class="dot"></div>
+        Shravan Portfolio
+      </div>
+
+      <nav aria-label="Main Navigation">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main id="main" class="container">
+    <!-- HERO -->
+    <section class="hero" aria-label="Introduction">
+      <article class="card fade-up" id="about">
+        <h1>Hi, I'm <span class="highlight">Shravan</span> 👋</h1>
+        <p>
+          I am a student who loves building modern websites and exploring technology.
+          I enjoy learning AI, creating useful projects, and sharing knowledge.
+        </p>
+
+        <div class="tags" aria-label="Skills tags">
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">UI Design</span>
+          <span class="tag">AI Interest</span>
+          <span class="tag">Web Projects</span>
+        </div>
+
+        <div class="actions">
+          <a class="btn primary" href="#projects">View Projects</a>
+          <a class="btn" href="https://github.com/shravan-info" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </article>
+
+      <aside class="card profile fade-up" aria-label="Profile card">
+        <div class="avatar" aria-label="Avatar">S</div>
+        <h2>Shravan Bhonkar</h2>
+        <p>
+          Student • Tech Explorer • Web Developer <br />
+          Building clean and modern websites.
+        </p>
+
+        <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center; margin-top:10px;">
+          <a class="btn" href="https://github.com/shravan-info" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </aside>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="fade-up" id="skills" aria-label="Skills section">
+      <div class="section-title">
+        <h2>Skills</h2>
+        <span>My current level</span>
+      </div>
+
+      <div class="skills">
+        <div class="card skill">
+          <h3>HTML</h3>
+          <div class="bar" aria-label="HTML skill level">
+            <div class="fill" data-fill="90"></div>
+          </div>
+        </div>
+
+        <div class="card skill">
+          <h3>CSS</h3>
+          <div class="bar" aria-label="CSS skill level">
+            <div class="fill" data-fill="80"></div>
+          </div>
+        </div>
+
+        <div class="card skill">
+          <h3>JavaScript</h3>
+          <div class="bar" aria-label="JavaScript skill level">
+            <div class="fill" data-fill="70"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="fade-up" id="projects" aria-label="Projects section">
+      <div class="section-title">
+        <h2>Projects</h2>
+        <span>Some things I built</span>
+      </div>
+
+      <div class="projects">
+        <article class="card project">
+          <h3>Math Solver Website</h3>
+          <p>
+            A clean ChatGPT-style math website UI with chat layout, suggestions, and animations.
+          </p>
+          <div class="meta" aria-label="Project tags">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JS</span>
+          </div>
+        </article>
+
+        <article class="card project">
+          <h3>Instagram, Facebook Login</h3>
+          <p>
+            I created many login pages including Instagram and Facebook.
+          </p>
+          <div class="meta" aria-label="Project tags">
+            <span class="tag">Content</span>
+            <span class="tag">Marathi</span>
+            <span class="tag">Education</span>
+          </div>
+        </article>
+
+        <article class="card project">
+          <h3>AI Search UI (No Backend)</h3>
+          <p>
+            A modern UI that looks like AI tools. It can be connected to any backend later.
+          </p>
+          <div class="meta" aria-label="Project tags">
+            <span class="tag">Frontend</span>
+            <span class="tag">UI</span>
+            <span class="tag">Modern</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      © <span id="year"></span> Shravan • SEO Optimized Portfolio
+    </footer>
+  </main>
+
+  <script>
+    // Current year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Fade-up animation (smooth)
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add("show");
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll(".fade-up").forEach(el => observer.observe(el));
+
+    // Skill bars animate
+    const skillObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          document.querySelectorAll(".fill").forEach(fill => {
+            fill.style.width = fill.dataset.fill + "%";
+          });
+        }
+      });
+    }, { threshold: 0.3 });
+
+    skillObserver.observe(document.getElementById("skills"));
+  </script>
+</body>
+</html>
